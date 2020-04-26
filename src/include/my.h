@@ -37,6 +37,7 @@ void my_putchar(char c);
 int my_put_nbr(int nb);
 int my_putstr(char const *str);
 int my_strlen(char const *str);
+int my_strlen_space(const char *str);
 int my_printf(const char *format, ...);
 int my_getnbr(char const *str);
 
@@ -49,7 +50,8 @@ int function_output(struct_t *my_struct);
 int cd_sort(struct_t *my_struct, int a);
 int path_detection(struct_t *my_struct, char **env);
 int hub_function(struct_t *my_struct, int a);
-int path_sort(struct_t *my_struct, char **env, int a);
+int path_sort(struct_t *my_struct, char **env, int a, int z);
 int with_path(char **env, struct_t *my_struct);
+void my_error_print(char *way);
 
 #endif /* !LIBMY_H_ */

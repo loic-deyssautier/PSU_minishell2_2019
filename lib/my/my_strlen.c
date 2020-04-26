@@ -11,3 +11,10 @@ int my_strlen(const char *str)
     for (count = 0; str[count] != 0; count++);
     return (count);
 }
+
+int my_strlen_space(const char *str)
+{
+    int count;
+    for (count = 0; str[count] != ' ' && str[count] != 0; count++);
+    return (count);
+}

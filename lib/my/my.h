@@ -12,6 +12,7 @@ void my_putchar(char c);
 int my_put_nbr(int nb);
 int my_putstr(char const *str);
 int my_strlen(char const *str);
+int my_strlen_space(const char *str);
 int my_printf(const char *format, ...);
 int my_getnbr(char const *str);
 int my_putnbr_base(int nbr, char const *base);

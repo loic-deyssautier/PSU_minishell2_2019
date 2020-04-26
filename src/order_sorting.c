@@ -25,7 +25,7 @@ int array_loop(struct_t *struc, int y)
         struc->i++;
     struc->arg[y] = malloc(sizeof(char) * struc->i);
     if (!struc->arg[y]) {
-        my_printf("Error, malloc2\n");
+        write(2, "Error, malloc2\n", 16);
         return (84);
     }
     for (; struc->count < struc->i; struc->count++)
@@ -37,8 +37,6 @@ int array_loop(struct_t *struc, int y)
 
 int order_in_array(struct_t *my_struct)
 {
-    my_struct->size = 2;
-    my_struct->x = 0;
     int y = 0;
     my_struct->i = 0;
     my_struct->count = 0;
@@ -52,7 +50,7 @@ int order_in_array(struct_t *my_struct)
     }
     my_struct->arg = malloc(sizeof(char *) * my_struct->size);
     if (!my_struct->arg) {
-        my_printf("Error, malloc1\n");
+        write(2, "Error, malloc1\n", 16);
         return (84);
     }
     for (; y < (my_struct->size - 1); y++, my_struct->count++)
@@ -64,6 +62,8 @@ int order_in_array(struct_t *my_struct)
 int hub_function(struct_t *my_struct, int a)
 {
     int error = 0;
+    my_struct->size = 2;
+    my_struct->x = 0;
 
     function_output(my_struct);
     my_struct->str[(my_strlen(my_struct->str) - 1)] = '\0';

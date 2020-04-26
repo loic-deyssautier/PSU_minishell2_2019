@@ -55,5 +55,8 @@ int main(int argc, char **argv, char **env)
 
     if (argc == 1)
         result = body(env);
-    return (result);
+    if (result == 84)
+        return (84);
+    else
+        return (0);
 }
