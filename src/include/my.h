@@ -17,18 +17,19 @@
 
 typedef struct
 {
-    char **arg;
+    char ***arg;
     char *str;
     char *way;
     int nb_arg;
     int pid;
     int child_pid;
     int count;
+    int semicolons;
     int x;
     int y;
     int i;
     int nb;
-    int size;
+    int *size;
     int error;
     int h;
 } struct_t;
@@ -43,10 +44,10 @@ int my_getnbr(char const *str);
 
 int argument_sorting(struct_t *my_struct, char **env);
 int body(char **env);
-int array_loop(struct_t *struc, int y);
+int array_loop(struct_t *struc, int y, int i);
 int order_in_array(struct_t *my_struct);
 void sub_array_loop(struct_t *struc, int y, int nb);
-int function_output(struct_t *my_struct);
+void function_output(struct_t *struct_s);
 int cd_sort(struct_t *my_struct, int a);
 int path_detection(struct_t *my_struct, char **env);
 int hub_function(struct_t *my_struct, int a);

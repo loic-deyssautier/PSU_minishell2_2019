@@ -17,7 +17,10 @@ int with_path(char **env, struct_t *my_struct)
             if (my_struct->str[i] == ' ')
                 my_struct->str[i] = '\0';
         }
-        execve(my_struct->str, my_struct->arg, env);
+        if (execve(my_struct->str, my_struct->arg, env) == -1) {
+                    write(2, my_struct->str, my_strlen(my_struct->str));
+                    write(2, ": Command not found.\n", 22);
+        }
         free(my_struct->str);
         for (int i = (my_struct->size - 1); i >= 0; i--)
             free(my_struct->arg[i]);
